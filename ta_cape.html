@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        .navbar {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 0px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo {
+            display: flex; 
+            align-items: center; 
+        }
+
+        .logo img {
+            height: 40px; 
+            margin-right: 10px; 
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(41, 60, 117);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgb(41, 60, 117);
+            font-size: 18px;
+            transition: color 0.3s;
+            padding-right: 25px;
+        }
+
+        .nav-links a:hover {
+            color: rgb(112, 112, 252); 
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+        }
+
+
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 5px;
+            margin-top: 0px;
+            background-color: rgb(52, 73, 141);
+        }
+        h2 {
+            color:  #333;
+            margin-top: 0px;
+        }
+
+
+        /* Mengatur content */
+        .container {
+            padding: 20px;
+            margin-top: 70px;
+        }
+    
+        /* Mengatur content informasi */
+        .information li {
+            margin-left: 10px;
+            padding: 5px;
+        }
+        .information li::marker {
+            color: rgb(41, 60, 117);
+        }
+        .information p {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        /* MENGATUR CONTENT BUKU */
+        .resource {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .resource h3 {
+            margin-top: 0;
+        }
+        /* Mengatur teks link */
+        .resource a {
+            color: rgb(52, 73, 141);
+            text-decoration: none;
+        }
+        .resource a:hover {
+            text-decoration: underline;
+        }
+        /* Mengatur box content */
+        .books {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .book {
+            flex: 1 1 calc(20% - 40px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            display: none;
+            text-align: center;
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .book img:hover {
+            transform: scale(1.05);
+        }
+        .book a {
+            text-decoration: none;
+            color: rgb(52, 73, 141);
+            display: block;
+            margin-top: 10px;
+        }
+        .book a:hover {
+            text-decoration: underline;
+        }
+        .book p {
+            margin-top: 10px;
+        }
+        .book.show {
+            display: block;
+        }
+
+        /* Mengatur tombol lihat semua */
+        .book.show button {
+            background-color: rgb(52, 73, 141);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .show-more, .show-less {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .show-more button, .show-less button {
+            background-color: rgb(52, 73, 141);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .show-more button:hover, .show-less button:hover {
+            background-color: rgb(41, 60, 117);
+        }
+
+        footer {
+            background-color: rgb(41, 60, 117);
+            color: white;
+            padding: 1px; /* Mengurangi padding untuk menghemat ruang */
+            text-align: center;
+            width: 100%;
+        }
+
+        footer div {
+            margin-bottom: 5px; /* Mengurangi margin-bottom */
+        }
+
+        footer a {
+            color: white;
+            margin: 0 5px; /* Mengurangi margin antar link */
+            text-decoration: none;
+        }
+
+        footer a img {
+            width: 20px; /* Mengurangi ukuran gambar */
+            vertical-align: middle;
+        }
+     
+        /* Mengatur content video */
+        .video-container {
+            display: flex;
+            align-items: flex-start;
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            width: 300px;
+            height: 200px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .video-content {
+            margin-left: 20px;
+            flex-grow: 1;
+        }
+        .video-content h3 {
+            margin-top: 0;
+            color: rgb(52, 73, 141);
+        }
+        .video-content p {
+            margin-top: 5px;
+        }
+
+        /* Mengatur responsive content buku */
+        @media (max-width: 768px) {
+            .book {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .book {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logolunatik.png" alt="lunatik">
+            <div class="logo-text"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home2.html">Beranda</a></li>
+            <li><a href="kuis.html">Tes Kesehatan</a></li>
+            <li><a href="ta_cape.html">Informasi</a></li>
+            <li><a href="mainfulnesrelaxation (1).html">Latihan Meditasi</a></li>
+
+        </ul>
+    </nav>
+
+<!-- CONTENT -->
+<div class="container">
+    <!-- CONTENT INFORMASI -->
+    <div class="information">
+        <h2>Pengenalan Kesehatan Mental</h2>
+        <p>Kesehatan mental adalah kesehatan yang berkaitan dengan kondisi emosi, kejiwaan, dan psikis seseorang. Menurut Frank L.K. Seseorang dengan kesehatan mental yang baik terus berkembang, tumbuh, dan matang dalam menjalani gaya hidup yang bertanggung jawab dan berkontribusi dalam melestarikan norma dalam masyarakat. </p>
+        
+        <h2>Penyebab Gangguan Kesehatan Mental</h2>
+        <p>Ada beberapa kondisi yang bisa menjadi penyebab seseorang mengalami gangguan kesehatan jiwa, antara lain:</p>
+        <ul>
+            <li>Cedera pada kepala.</li>
+            <li>Tekanan akademis</li>
+            <li>Faktor genetik atau terdapat riwayat pengidap gangguan kesehatan jiwa dalam keluarga.</li>
+            <li>Adanya riwayat kekerasan saat kanak-kanak.</li>
+            <li>Memiliki kelainan senyawa kimia otak atau gangguan pada otak.</li>
+            <li>Mengalami diskriminasi dan stigma.</li>
+            <li>Kehilangan atau kematian seseorang yang sangat dekat.</li>
+            <li>Mengalami kerugian sosial, seperti masalah kemiskinan atau utang.</li>
+            <li>Pengerjaan skripsi</li>
+            <li>Pengaruh zat racun, alkohol, atau obat-obatan yang dapat merusak otak.</li>
+            <li>Terisolasi secara sosial atau merasa kesepian.</li>
+        </ul>
+        
+        <h2>Pengobatan Gangguan Kesehatan Mental</h2>
+        <p>Ada beberapa kondisi yang bisa menjadi penyebab seseorang mengalami gangguan kesehatan jiwa, antara lain:</p>
+        <ol>
+            <li>Psikoterapi
+                <p>Ini merupakan jenis terapi dengan media yang aman untuk mengungkapkan perasaan dan memberikan saran yang sesuai. Dalam situasi ini, psikiater akan memberi bantuan dengan membimbing pengidap dalam mengontrol perasaan. Sementara itu, psikoterapi beserta perawatan dengan menggunakan obat-obatan merupakan cara yang paling efektif untuk mengobati penyakit kesehatan mental. Contohnya cognitive behavioral therapy, exposure therapy, dialectical behavior therapy, dan sebagainya.</p>
+            </li>
+            <li>Obat
+                <p>Pemberian obat-obatan untuk mengobati penyakit kesehatan jiwa umumnya bertujuan untuk mengubah senyawa kimia pada otak. Beberapa obat tersebut berupa golongan selective serotonin reuptake inhibitor (SSRI), serotonin-norepinephrine reuptake inhibitor (SNRIs), dan antidepresan trisiklik. Dokter biasanya akan mengombinasikan resep obat dengan psikoterapi untuk hasil pengobatan yang lebih efektif.</p>
+            </li>
+            <li>Perawatan intensif di rumah sakit
+                <p>Dokter dan ahli kejiwaan akan menyarankan rawat inap jika pengidap membutuhkan pemantauan ketat terhadap gejala masalah kesehatan jiwa yang dialami. Selain itu, perawatan intensif juga mungkin perlu apabila pengidap menunjukkan kondisi gawat darurat misalnya percobaan bunuh diri.</p>
+            </li>
+            <li>Perawatan mandiri
+                <p>Selain penanganan medis dengan bantuan psikolog atau psikiater, pengidap juga bisa melakukan perawatan mandiri untuk mengatasi gangguan kesehatan mental. Misalnya, mengubah pola hidup dan pola makan sehat, dan mampu mengelola stres dengan baik. Selain itu, perawatan mandiri bersamaan dengan penanganan medis bisa membantu mempercepat proses pemulihan, memantau kondisi kesehatan, dan mengenali apa saja yang menjadi pemicu terjadinya gangguan psikologi tersebut.</p>
+            </li>
+        </ol>
+
+        <p style="color: rgb(52, 73, 141); text-align: center;"><i>Ingat! Jangan ragu untuk menghubungi psikiater ataupun psikolog demi kebahagiaanmu😊</i></p>
+    </div>
+
+
+    <!-- CONTENT BUKU -->
+    <div class="resource">
+        <h3>Buku Tentang Kesehatan Mental</h3>
+        <div class="books">
+            <!-- Buku 1 -->
+            <div class="book show">
+                <img src="11.jpg" alt="Konseling Kesehatan Mental Klinis">
+                <h4>"Konseling Kesehatan Mental Klinis" oleh Donna S. Sheperis</h4>
+                <p>Buku ini membahas tentang dasar-dasar konseling kesehatan mental klinis, termasuk teori, teknik, dan aplikasi praktis. Buku ini cocok untuk mahasiswa psikologi, konselor, dan profesional kesehatan mental lainnya yang ingin memperdalam pengetahuan mereka tentang konseling kesehatan mental.</p>
+                <a href="https://www.gramedia.com/products/konseling-kesehatan-mental-klinis" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 2 -->
+            <div class="book show">
+                <img src="22.jpg" alt="Kesehatan Mental Psikiatri">
+                <h4>"Kesehatan Mental Psikiatri" oleh Mary Baradero, SPC, MN, dkk</h4>
+                <p>Buku ini membahas tentang berbagai gangguan kesehatan mental, termasuk depresi, kecemasan, psikosis, dan trauma. Buku ini juga membahas tentang diagnosis, pengobatan, dan pencegahan gangguan kesehatan mental. Buku ini cocok untuk mahasiswa kedokteran, psikiater, dan profesional kesehatan mental lainnya yang ingin mempelajari lebih lanjut tentang kesehatan mental.</p> 
+                <a href="https://ebooks.gramedia.com/id/buku/kesehatan-mental-psikiatri-seri-asuhan-keperawatan" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 3 -->
+            <div class="book show">
+                <img src="33.jpg" alt="Warning: Psychiatry Can Be Hazardous to Your Mental Health">
+                <h4>"Warning: Psychiatry Can Be Hazardous to Your Mental Health" oleh William Glasser, M.D.</h4>
+                <p>Buku ini menantang pendekatan yang berlaku dalam perawatan kesehatan mental, dengan menyatakan bahwa ketergantungan yang berlebihan pada pengobatan dapat merugikan kesejahteraan mental pasien dan menganjurkan pendekatan yang lebih holistik yang menekankan psikoterapi dan tanggung jawab diri.</p> 
+                <a href="https://www.gramedia.com/products/conf-warning-psychiatry-can-be-hazardous-to-your-mental-health?queryID=5944ba857d1fe1cc714d000bd52f1c35" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 4 -->
+            <div class="book show">
+                <img src="44.jpg" alt="Internet dan Kesehatan Mental">
+                <h4>"Internet dan Kesehatan Mental" oleh Namora Lumongga Lubis, M.Sc., Ph.D. dan Hasnida, Ph.D., Psikolog</h4>
+                <p>Buku ini dapat membuat para pembaca mengetahui fenomena yang terjadi saat ini dengan berbagai dampak yang akan mengikuti sesuai dengan bagaimana internet digunakan oleh para penggunanya.</p> 
+                <a href="https://www.gramedia.com/products/internet-dan-kesehatan-mental-membuat-bahagia-atau-malah-se?queryID=5944ba857d1fe1cc714d000bd52f1c35" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 5 -->
+            <div class="book show">
+                <img src="55.jpg" alt="Psikologi Kesehatan Mental">
+                <h4>"Psikologi Kesehatan Mental" oleh Siswanto</h4>
+                <p>Buku ini menjelaskan situasi/penyebab terjadinya kesurupan, sampai pada kepribadian dan keyakinan yang dimiliki oleh individu yang mengalami kesurupan. Juga dibahas bagaimana umumnya perilaku selama kesurupan serta apa yang terjadi setelah/paska individu mengalami kesurupan.</p> 
+                <a href="https://www.gramedia.com/products/psikologi-kesehatan-mental?queryID=5944ba857d1fe1cc714d000bd52f1c35" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 6 -->
+            <div class="book show">
+                <img src="66.jpg" alt="Indonesia Mental Health First Aid Booklet">
+                <h4>"Indonesia Mental Health First Aid Booklet" oleh DR. Sandersan Onie</h4>
+                <p>Buku ini membahas 10 hal yang kita bisa lakukan pada saat orang di sekitar kita mengalami masa gelap, menguraikan ciri-ciri psychological disorders seperti depresi, kecemasan, hingga burnout, serta apa yang perlu dilakukan jika orang tersebut memiliki pikiran tentang bunuh diri.</p> 
+                <a href="https://www.gramedia.com/products/indonesia-mental-health-first-aid-booklet-panduan-pertolongan-pertama-kesehatan-jiwa-indonesia?queryID=5944ba857d1fe1cc714d000bd52f1c35" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 7 -->
+            <div class="book show">
+                <img src="77.jpg" alt="Islam & Kesehatan Mental">
+                <h4>"Islam & Kesehatan Mental" oleh DR. Mulyadi, S.Ag, M.Pd</h4>
+                <p>Buku ini hadir untuk memberikan informasi lebih lengkap terkait islam, kesehatan mental dan hubungan diantara keduanya yang diharapkan menambah pengetahuan pembaca terkait islam dan kesehatan mental.</p> 
+                <a href="https://www.gramedia.com/products/islam-kesehatan-mental?queryID=5944ba857d1fe1cc714d000bd52f1c35" target="_blank">Beli Disini</a>
+            </div>
+            <!-- Buku 8 -->
+            <div class="book show">
+                <img src="88.jpg" alt="Nutrient Power">
+                <h4>"Nutrient Power" oleh William J Walsh</h4>
+                <p>Buku ini memperkenalkan konsep terapi biokimia untuk memulihkan masalah kesehatan mental. Jika terapi-terapi yang lain tidak berhasil memulihkan kesehatan mental Anda, barangkali terapi biokimia bisa menjadi jalan keluarnya.</p> 
+                <a href="https://www.gramedia.com/products/nutrient-power-memulihkan-kesehatan-mental?queryID=25a9b2dc5a9b29a06b980956543cf3b9" target="_blank">Beli Disini</a>
+            </div>
+        </div>
+
+        <!-- Tombol lihat semua & lihat lebih sedikit -->
+        <div class="show-more">
+            <button onclick="showMoreBooks()">Lihat Semua</button>
+        </div>
+        <div class="show-less" style="display: none;">
+            <button onclick="showLessBooks()">Lihat Lebih Sedikit</button>
+        </div>
+    </div>
+
+
+    <!-- CONTENT ARTIKEL -->
+    <div class="resource">
+        <h3>Artikel Tentang Kesehatan Mental</h3>
+        <ul>
+            <li><a href="https://doaj.org/article/0fa97fe6036c45a98ce2a185f35b682f" target="_blank">"The interRAI Child and Youth Suite of Mental Health Assessment Instruments: An Integrated Approach to Mental Health Service Delivery"</a></li>
+            <li><a href="https://jurnal.unpad.ac.id/mkk/article/view/22175" target="_blank">"Penyuluhan Kesehatan Jiwa untuk Meningkatkan Pengetahuan Masyarakat tentang Masalah Kesehatan Jiwa di Lingkungan Sekitarnya"</a></li>
+            <li><a href="https://www.mdpi.com/2077-1444/13/8/681" target="_blank">"From Mental Health Crisis to Existential Human Suffering: The Role of Self-Transcendence in Contemporary Mindfulness"</a></li>
+            <li><a href="https://www.catatanpsikologi.com/apa-itu-toxic-positivity-bagaimana-dampaknya-bagi-kesehatan-mental/" target="_blank">"Apa Itu Toxic Positivity? Bagaimana Dampaknya Bagi Kesehatan Mental?"</a></li>
+            <li><a href="https://www.nature.com/articles/d41586-021-02690-5" target="_blank">"Young people's mental health is finally getting the attention it needs"</a></li>
+        </ul>
+    </div>
+
+
+    <!-- CONTENT VIDEO -->
+    <div class="resource videos">
+        <h3>Video Informasi Tentang Kesehatan Mental</h3>
+        <!-- Video 1 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dNFXy4ELCLQ?si=zeGVzYATHMy9WY-q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-content">
+                <h3>Kalau Sedang Ada Gangguan Mental, Sadar Nggak Sih?|Dr. Vania Utami</h3>
+                <p>Penjelasan tentang penyakit mental dari Dr. Vania Utami tentang gejala, penyebab dan hal-hal yang dirasakan oleh penderita penyakit mental.</p>
+            </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/S7sv5U38c_0?si=PC_-YdfeKu0-qQAs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-content">
+                <h3>#suaratirta: Mental Illness</h3>
+                <p>Menjelaskan tentang penyakit kesehatan mental, jenis serta perbedaan dari; Gangguan cemas, Psikomatris, PTSD, Skizofrenia, Depresi, Katatonik, Bipolar, dan Skizofrenia Major.</p>
+            </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VqY1fBptc2g?si=MQ0wBedwrydQE9I0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-content">
+                <h3>Kenali Pikiranmu, Kurangi Overthinking-mu</h3>
+                <p>Video ini menjelaskan kepada kita mengenai 3 pola pikiran negatif yang seringkali ditemuin.</p>
+            </div>
+        </div>
+        <!-- Video 4 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/9kdHXQ7BPc8?si=X4aW8MlTykqwqYUF" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-content">
+                <h3>On Marissa's Mind: Kuat Mental</h3>
+                <p>Video ini membahas mengenai bagaimana menjadi seorang yang memiliki mental yang kuat, dan menjelaskan komponen-komponen menjadi seorang yang memiliki mental yang kuat</p>
+            </div>
+        </div>
+        <!-- Video 5 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/HkWFo5973Z4?si=A5dg99xWYxM5ncPe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-content">
+                <h3>MENTAL ILLNESS ATAU MENTAL DISORDER - 13 MACAM PENYAKIT GANGGUAN MENTAL</h3>
+                <p>Video ini memberikan informasi mengenai mental illness atau mental disorder, serta membahas 13 penyakit kesehatan mental</p>
+            </div>
+        </div>
+</div>
+
+
+<footer style="background-color: rgb(41, 60, 117); color: white; padding: 20px; text-align: center;">
+    <div>
+        <p>Ikuti Kami di Media Sosial:</p>
+        <!-- putu -->
+        <a href="https://www.instagram.com/putudevia14?igsh=MXRkenFkdHZudGd4ZQ==" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; vertical-align: middle;"> @putudevia14
+        </a>
+        <!-- rahma -->
+        <a href="https://www.instagram.com/imrhmaa?igsh=MTdvcjZnaWhvZ3A5bQ==" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; vertical-align: middle;"> @imrhmaa
+        </a>
+        <!-- shofia -->
+        <a href="https://www.instagram.com/shofiapramudiaa?igsh=MW15ZGx4cnI5aG10cQ==" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; vertical-align: middle;"> @shofiapramudiaa
+        </a>
+    </div>
+    <p class="footer">&copy; 2024 Lunatik</p>   
+</footer>
+
+
+<!-- Mengatur tombol lihat semua & lihat lebih sedikit -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var books = document.querySelectorAll('.book');
+        for (var i = 0; i < books.length; i++) {
+            if (i >= 4) {
+                books[i].classList.remove('show');
+            } else {
+                books[i].classList.add('show');
+            }
+        }
+    });
+    function showMoreBooks() {
+        var books = document.querySelectorAll('.book');
+        books.forEach(function(book) {
+            book.classList.add('show');
+        });
+        document.querySelector('.show-more').style.display = 'none';
+        document.querySelector('.show-less').style.display = 'block';
+    }
+
+    function showLessBooks() {
+        var books = document.querySelectorAll('.book');
+        books.forEach(function(book, index) {
+            if (index >= 4) {
+                book.classList.remove('show');
+            }
+        });
+        document.querySelector('.show-more').style.display = 'block';
+        document.querySelector('.show-less').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

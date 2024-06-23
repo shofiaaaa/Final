@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Kesehatan Mental</title>
+    <link rel="stylesheet" href="kuis.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+            padding: 20px;
+            padding-bottom: 60px; /* Menambahkan padding bawah untuk menghindari tabrakan dengan footer */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            margin-top: 50px;
+        }
+
+        footer {
+            background-color: rgb(41, 60, 117);
+            color: white;
+            padding: 1px; /* Mengurangi padding untuk menghemat ruang */
+            text-align: center;
+            width: 100%;
+        }
+
+        footer div {
+            margin-bottom: 5px; /* Mengurangi margin-bottom */
+        }
+
+        footer a {
+            color: white;
+            margin: 0 5px; /* Mengurangi margin antar link */
+            text-decoration: none;
+        }
+
+        footer a img {
+            width: 20px; /* Mengurangi ukuran gambar */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logolunatik.png" alt="Lunatik">
+            <div class="logo-text"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home2.html">Beranda</a></li>
+            <li><a href="kuis.html">Tes Kesehatan</a></li>
+            <li><a href="ta_cape.html">Informasi</a></li>
+            <li><a href="mainfulnesrelaxation (1).html">Latihan Meditasi</a></li>
+        </ul>
+    </nav>
+
+    <!-- Konten -->
+    <div class="container">
+        <h1>Kuesioner Kesehatan Mental</h1>
+        <form id="mental-health-form">
+            <!-- Pertanyaan Kuesioner -->
+            <div class="form-group">
+                <label for="tired">Apakah Anda sering tiba-tiba merasa lelah?</label>
+                <div class="radio-group">
+                    <input type="radio" id="tired-yes" name="tired" value="iya" required>
+                    <label for="tired-yes">Iya</label>
+                    <input type="radio" id="tired-no" name="tired" value="tidak">
+                    <label for="tired-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="anxious">Apakah Anda sering merasa cemas?</label>
+                <div class="radio-group">
+                    <input type="radio" id="anxious-yes" name="anxious" value="iya" required>
+                    <label for="anxious-yes">Iya</label>
+                    <input type="radio" id="anxious-no" name="anxious" value="tidak">
+                    <label for="anxious-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hopeless">Apakah Anda sering merasa putus asa?</label>
+                <div class="radio-group">
+                    <input type="radio" id="hopeless-yes" name="hopeless" value="iya" required>
+                    <label for="hopeless-yes">Iya</label>
+                    <input type="radio" id="hopeless-no" name="hopeless" value="tidak">
+                    <label for="hopeless-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="restless">Apakah Anda sering merasa gelisah?</label>
+                <div class="radio-group">
+                    <input type="radio" id="restless-yes" name="restless" value="iya" required>
+                    <label for="restless-yes">Iya</label>
+                    <input type="radio" id="restless-no" name="restless" value="tidak">
+                    <label for="restless-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="uneasy">Apakah Anda sering merasa tidak tenang?</label>
+                <div class="radio-group">
+                    <input type="radio" id="uneasy-yes" name="uneasy" value="iya" required>
+                    <label for="uneasy-yes">Iya</label>
+                    <input type="radio" id="uneasy-no" name="uneasy" value="tidak">
+                    <label for="uneasy-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sleepless">Apakah Anda sering tidak bisa tidur?</label>
+                <div class="radio-group">
+                    <input type="radio" id="sleepless-yes" name="sleepless" value="iya" required>
+                    <label for="sleepless-yes">Iya</label>
+                    <input type="radio" id="sleepless-no" name="sleepless" value="tidak">
+                    <label for="sleepless-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deepsadness">Apakah Anda sering merasa sedih yang mendalam?</label>
+                <div class="radio-group">
+                    <input type="radio" id="deepsadness-yes" name="deepsadness" value="iya" required>
+                    <label for="deepsadness-yes">Iya</label>
+                    <input type="radio" id="deepsadness-no" name="deepsadness" value="tidak">
+                    <label for="deepsadness-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Apakah Anda sering merasa sulit melakukan sesuatu yang biasanya mudah dilakukan?</label>
+                <div class="radio-group">
+                    <input type="radio" id="difficulty-yes" name="difficulty" value="iya" required>
+                    <label for="difficulty-yes">Iya</label>
+                    <input type="radio" id="difficulty-no" name="difficulty" value="tidak">
+                    <label for="difficulty-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="uncomforted">Apakah Anda sering merasa sangat sedih sampai tidak ada yang dapat membuat Anda terhibur?</label>
+                <div class="radio-group">
+                    <input type="radio" id="uncomforted-yes" name="uncomforted" value="iya" required>
+                    <label for="uncomforted-yes">Iya</label>
+                    <input type="radio" id="uncomforted-no" name="uncomforted" value="tidak">
+                    <label for="uncomforted-no">Tidak</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="worthless">Apakah Anda sering merasa tidak berharga?</label>
+                <div class="radio-group">
+                    <input type="radio" id="worthless-yes" name="worthless" value="iya" required>
+                    <label for="worthless-yes">Iya</label>
+                    <input type="radio" id="worthless-no" name="worthless" value="tidak">
+                    <label for="worthless-no">Tidak</label>
+                </div>
+            </div>
+            <button type="submit">Kirim</button>
+        </form>
+        <div id="result" style="display: none; margin-top: 20px;">
+            <h2>Hasil Skor Kesehatan Mental Anda:</h2>
+            <p id="score"></p>
+            <p id="stress-level"></p>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p>Ikuti Kami di Media Sosial:</p>
+            <!-- putu -->
+            <a href="https://www.instagram.com/putudevia14?igsh=MXRkenFkdHZudGd4ZQ==" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @putudevia14
+            </a>
+            <!-- rahma -->
+            <a href="https://www.instagram.com/imrhmaa?igsh=MTdvcjZnaWhvZ3A5bQ==" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @imrhmaa
+            </a>
+            <!-- shofia -->
+            <a href="https://www.instagram.com/shofiapramudiaa?igsh=MW15ZGx4cnI5aG10cQ==" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @shofiapramudiaa
+            </a>
+        </div>
+        <p class="footer">&copy; 2024 Lunatik</p>   
+    </footer>
+    <script src="tes_kesehatan.js"></script>
+</body>
+</html>

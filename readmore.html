@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 0px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(41, 60, 117);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgb(41, 60, 117); 
+            font-size: 18px;
+            transition: color 0.3s;
+            padding-right: 25px;
+        }
+
+        .nav-links a:hover {
+            color: rgb(112, 112, 252);  
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li {
+                margin-left: 10px; 
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+        }
+
+        main {
+            background-color: #fff;
+            margin: 100px 0 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            border: 2px solid #007BFF;
+        }
+
+        h1 {
+            color: rgb(41, 60, 117);
+            font-size: 24px;
+        }
+
+        .info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        .info .label {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: rgb(41, 60, 117);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-media a img {
+            width: 24px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .social-media {
+                flex-direction: column;
+            }
+
+            .social-media a {
+                margin: 5px 0;
+            }
+        }
+
+        .footer-text {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logolunatik.png" alt="Lunatik">
+            <div class="logo-text"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home2.html">Beranda</a></li>
+            <li><a href="kuis.html">Tes Kesehatan</a></li>
+            <li><a href="ta_cape.html">Informasi</a></li>
+            <li><a href="mainfulnesrelaxation (1).html">Latihan Meditasi</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Informasi tentang Aplikasi Kesehatan Mental</h1>
+        <p>Aplikasi Kesehatan Mental ini dibuat untuk memenuhi persyaratan dalam menyelesaikan tugas akhir semester mata kuliah Pemrograman Web 1. Didalam website ini terdapat fitur tes kesehatan (yang berisi kuesioner beberapa soal mengenai kesehatan mental), Informasi (yang berisi informasi buku dan video tentang kesehatan mental), Latihan Meditasi (yang berisi tentang penjelasan meditasi, manfaat meditasi dan video cara melakukan meditasi) </p>
+        <div class="info">
+            <h2>Pengembang</h2>
+            <p><span class="label">Nama:</span> Putu Devia Marsa, Siti Rahmatul Maulidia, Shofia Pramudia</p>
+            <p><span class="label">Program Studi:</span> Pendidikan Komputer, Fakultas Keguruan dan Ilmu Pendidikan, Universitas Lambung Mangkurat.</p>
+            <p><span class="label">E-mail:</span> lunatik@gmail.com</p>
+            <p><span class="label">Dosen Pembimbing:</span> Dr. Harja Santana Purba, M.Kom. dan Novan Alkaf B. S., S.Kom., M.T</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Ikuti Kami di Media Sosial:</p>
+            <div class="social-media">
+                <!-- putu -->
+                <a href="https://www.instagram.com/putudevia14?igsh=MXRkenFkdHZudGd4ZQ==" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @putudevia14
+                </a>
+                <!-- rahma -->
+                <a href="https://www.instagram.com/imrhmaa?igsh=MTdvcjZnaWhvZ3A5bQ==" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @imrhmaa
+                </a>
+                <!-- shofia -->
+                <a href="https://www.instagram.com/shofiapramudiaa?igsh=MW15ZGx4cnI5aG10cQ==" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> @shofiapramudiaa
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2024 Lunatik</p>
+        </div>
+    </footer>
+</body>
+</html>

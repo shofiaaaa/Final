@@ -1,0 +1,217 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global styles */
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0px 20px;
+    padding-top: 12px;
+    padding-bottom: 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(41, 60, 117);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(41, 60, 117); /* Ganti warna sesuai kebutuhan */
+    font-size: 18px;
+    transition: color 0.3s;
+    padding-right: 25px;
+}
+
+.nav-links a:hover {
+    color: rgb(112, 112, 252);  /* Ganti warna sesuai kebutuhan */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(41, 60, 117); /* Ganti warna sesuai kebutuhan */
+    font-size: 18px;
+    transition: color 0.3s;
+    padding-right: 25px;
+}
+
+.nav-links a:hover {
+    color: rgb(112, 112, 252);  /* Ganti warna sesuai kebutuhan */
+}
+
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links li {
+        margin-left: 10px; /* Further reduce margin on smaller screens */
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff; /* Ganti warna sesuai kebutuhan */
+    text-align: center;
+    padding-top: 7rem;
+}
+
+.home .content {
+    flex: 1;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #ffffff; /* Ganti warna sesuai kebutuhan */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.home .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.home h3 {
+    font-size: 25px;
+    margin-bottom: 1rem;
+    color: #333333; /* Ganti warna sesuai kebutuhan */
+}
+
+.home p {
+    font-size: 20px;
+    margin-bottom: 2rem;
+    color: #666666; /* Ganti warna sesuai kebutuhan */
+}
+
+.home .btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 0.8rem 1.2rem;
+    background-color: #007bff; /* Ganti warna sesuai kebutuhan */
+    color: #ffffff; /* Ganti warna sesuai kebutuhan */
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.home .btn:hover {
+    background-color: #0056b3; /* Ganti warna sesuai kebutuhan */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.6rem;
+        margin: 10px 0;
+    }
+
+    .home {
+        padding-top: 15rem;
+    }
+
+    .home .content,
+    .home .image {
+        width: 100%;
+        padding: 2rem;
+    }
+}
